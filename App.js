@@ -4,13 +4,19 @@ import ColorButton from "./components/ColorButton";
 import ColorForm from "./components/ColorForm";
 import { generate } from "shortid";
 
-export default function App() {
-  const [backgroundColor, setBackgroundColor] = useState("blue");
+const useColors = () => {
   const [colors, setColors] = useState([]);
   const addColor = (color) => {
     const newColor = { id: generate(), color };
     setColors([newColor, ...colors]);
   };
+  return { colors, addColor };
+};
+
+export default function App() {
+  const [backgroundColor, setBackgroundColor] = useState("blue");
+  const { colors, addColor } = useColors();
+
   return (
     <>
       <ColorForm onNewColor={addColor} />
