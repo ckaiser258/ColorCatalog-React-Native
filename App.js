@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   image: {
-
+    resizeMode: "center"
   }
 })
