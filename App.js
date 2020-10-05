@@ -1,10 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
+
+import picBiscuit from "./assets/biscuit.jpg"
 
 export default function App() {
   return (
     <View style={styles.page}>
-      <Text style={styles.text}>[TODO: INSERT CAT]</Text>
+      <Image style={styles.image} source={picBiscuit}/>
     </View>
   );
 }
@@ -15,8 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  text: {
-    textAlign: "center",
-    fontSize: 22,
+  image: {
+
   }
 })
