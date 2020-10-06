@@ -5,21 +5,19 @@ import ColorForm from "./ColorForm";
 import { useColors } from '../hooks'
 
 export default function ColorList() {
-  const [backgroundColor, setBackgroundColor] = useState("blue");
   const { colors, addColor } = useColors();
 
   return (
     <>
       <ColorForm onNewColor={addColor} />
       <FlatList
-        style={[styles.container, { backgroundColor }]}
+        style={[styles.container]}
         data={colors}
         renderItem={({ item }) => {
           return (
             <ColorButton
               key={item.id}
               backgroundColor={item.color}
-              onPress={setBackgroundColor}
             />
           );
         }}
