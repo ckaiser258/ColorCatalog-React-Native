@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import ColorButton from "./ColorButton";
 import ColorForm from "./ColorForm";
-import { useColors } from '../hooks'
+import { useColors } from "../hooks";
 
-export default function ColorList() {
+export default function ColorList({ navigation }) {
   const { colors, addColor } = useColors();
 
   return (
@@ -18,6 +18,9 @@ export default function ColorList() {
             <ColorButton
               key={item.id}
               backgroundColor={item.color}
+              onPress={() =>
+                navigation.navigate("Details", { color: item.color })
+              }
             />
           );
         }}

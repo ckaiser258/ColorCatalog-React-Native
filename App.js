@@ -10,9 +10,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Navigator>
-      <Screen name="Home"
-      options={{title: "Color List"}}
-      component={ColorList} />
+        <Screen
+          name="Home"
+          options={{ title: "Color List" }}
+          component={ColorList}
+        />
         <Screen name="Details" component={ColorDetails} />
       </Navigator>
     </NavigationContainer>
